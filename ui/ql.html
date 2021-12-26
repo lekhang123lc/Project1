@@ -1,0 +1,1550 @@
+<html>
+    <head>
+        <title>Quản lý bài tập cá nhân</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    
+    </head>
+    <body>
+    <div class="container">
+        <ul class="collapsible" >
+            <!-- A -->
+            <li>
+              <div class="collapsible-header"><strong>A/ Các bài tập java cơ bản</strong></div>
+              <div class="collapsible-body">
+                <ul class="collapsible">
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 1: In ra màn hình tất cả các hợp số < 100 </strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        public class B1 {
+            public static void main(String[] args) {
+                System.out.println(&quot;20180108 Le Tuan Khang&quot;);
+                for(int i=2;i&lt;100;i++){
+                int check = 0;
+                for(int j=2;j &lt; i;j++){
+                    if ( i%j == 0 ) {
+                    check=1;
+                    break;
+                }
+                }
+                if ( check == 1 ) {
+                    System.out.print(i+&quot; &quot;);
+                }
+                }
+            }
+        }
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/A/Picture1.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 2: In ra màn hình 20 số nguyên tố đầu tiên </strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        public class B2 {
+            public static void main(String[] args) {
+                System.out.println(&quot;20180108 Le Tuan Khang&quot;);
+                int n=0,m=2;
+                while(n&lt;20){
+                    int check=1;
+                    for(int i=2;i&lt;m/2;i++){
+                        if ( m%i == 0 ) check=0;
+                    }
+                    if ( check == 1 ) {
+                        n++;
+                        System.out.print(m+&quot; &quot;);
+                    }
+                    m++;
+                }
+            }
+        }
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/A/Picture2.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 03: In ra màn hình tất cả các số nguyên tố từ 1000 đến 2000 </strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        public class B3 {
+            public static void main(String[] args) {
+                System.out.println(&quot;20180108 Le Tuan Khang&quot;);
+                for(int i=1000;i&lt;=2000;i++){
+                    int check = 0;
+                    for(int j=2;j&lt;i;j++){
+                        if ( i%j == 0 ) {
+                            check=1;
+                            break;
+                        }
+                    }
+                    if ( check == 0 ) {
+                        System.out.print(i+&quot; &quot;);
+                    }
+                }
+            }
+        }
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/A/Picture3.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 04: In ra màn hình các số < 100 và chia hết cho 3,7 </strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        public class B4 {
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                for(int i=1;i&lt;=100;i++){
+                    if ( i%3 ==0 && i%7 == 0 ) {
+                        System.out.print(i+" ");
+                    }
+                }
+            }
+        }                                
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/A/Picture4.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 05: In ra màn hình các số nằm giữa 1000 và 2000 đồng thời chia hết cho 3,5,7 </strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        public class B5 {
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                for(int i=1000;i&lt;=2000;i++){
+                    if ( i%3 == 0 && i%5 == 0 && i%7 == 0 ) {
+                        System.out.print(i+" ");
+                    }
+                }
+            }
+        }                            
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/A/Picture5.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 06: In ra màn hình 5 số hoàn hảo đầu tiên (Số hoàn hảo là số có tổng bằng các ước số của mình kể cả 1 </strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        public class B6 {
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                int n=0,m=1;
+                while(n<5){
+                    int check=m;
+                    for(int i=1;i&lt;=m/2;i++){
+                        if ( m%i == 0 ) check-=i;
+                    }
+                    if ( check == 0 ) {
+                        n++;
+                        System.out.print(m+&quot; &quot;);
+                    }
+                    m++;
+                }
+            }
+        }                                                           
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/A/Picture6.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 07: Trong các số tự nhiên <=100 hãy đếm xem có bao nhiêu số
+                            a.	Chia hết cho 5
+                            b.	Chia 5 dư 1
+                            c.	Chia 5 dư 2
+                            d.	Chia 5 dư 3
+                             </strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        public class B7 {
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                int d0=0,d1=0,d2=0,d3=0;
+                for(int i=1;i&lt;=100;i++){
+                    if( i%5 == 0 ) d0++;
+                    if( i%5 == 1 ) d1++;
+                    if( i%5 == 2 ) d2++;
+                    if( i%5 == 3 ) d3++;
+                }
+                System.out.println("So cac so chia het cho 5 "+d0);
+                System.out.println("So cac so chia 5 du 1 "+d1);
+                System.out.println("So cac so chia 5 du 2 "+d2);
+                System.out.println("So cac so chia 5 du 3 "+d3);
+            }
+        }                                                                                          
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/A/Picture7.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 8: Cho số tự nhiên N bất kỳ (đã gán trước đó), tìm và in ra ước số nguyên tố nhỏ nhất của N.</strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        public class B8 {
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                int n = 100;
+                System.out.println(n);
+                for(int i=2;i&lt;=n;i++){
+                    if( n%i == 0 ){
+                        System.out.println(i);
+                        break;
+                    }
+                }
+            }
+        }                                                                                                                         
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/A/Picture8.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 09: Cho số tự nhiên N>1 bất kỳ (đã gán trước đó). In ra khai triển thành tích các số nguyên tố tính từ nhỏ đến lớn VD: 9=3.3; 12=2.2.3.</strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        public class B9 {
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                int n = 100;
+                System.out.print(n+"=");
+                int first=1;
+                for(int i=2;i&lt;=n;i++){
+                    while( n%i == 0 ){
+                        n/=i;
+                        if ( first == 1 ){
+                            System.out.print(i);    
+                            first=0;
+                        }
+                        else{
+                            System.out.print("."+i);
+                        }
+                    }
+                }
+            }
+        }                                                                                                                                                         
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/A/Picture9.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 10: Cho trước số tự nhiên N bất kỳ (đã gán trước đó). In ra màn hình tất cả các ước số nguyên tố khác nhau của N.</strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        public class B10 {
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                int n = 100;
+                System.out.println(n);
+                for(int i=2;i&lt;=n;i++){
+                    if ( n%i == 0 ){
+                        System.out.print(i+" ");
+                    }
+                    while( n%i == 0 ){
+                        n/=i;
+                    }
+                }
+            }
+        }                                                                                                                                                                                       
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/A/Picture9.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 11: Viết chương trình tráo đổi ngẫu nhiên vị trí một dãy số cho trước. Để lấy một số int ngẫu nhiên từ 0 đến n-1 ta dùng lệnh int i = Random.nextInt(n); </strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        import java.util.Random;
+
+        public class B12 {
+        
+            public static void main(String[] args) {
+                System.out.println(&quot;20180108 Le Tuan Khang&quot;);
+                int len = 10;
+                int[] arr = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+                Random ran = new Random();
+                int n = ran.nextInt(9)+1;
+                System.out.println(&quot;Day ban dau:&quot;);
+                for(int i=0;i&lt;=len;i++){
+                    System.out.print(arr[i]+&quot; &quot;);
+                }
+        
+                for(int i=1;i&lt;=n;i++){
+                    int r1 = ran.nextInt(len);
+                    int r2 = ran.nextInt(len);
+                    int tmp = arr[r1];
+                    arr[r1]=arr[r2];
+                    arr[r2]=tmp;
+                }
+        
+                System.out.println(&quot;\nDay sau khi hoan doi &quot;+n+&quot; lan ngau nhien:&quot;);
+                for(int i=0;i&lt;len;i++){
+                    System.out.print(arr[i]+&quot; &quot;);
+                }
+                
+            }
+        }                                                                                                                                                                                                                      
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/A/Picture11.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 12. Viết chương trình nhập chiều cao h từ bàn phím, sau đó hiển thị các tam giác hình sao có chiều cao h như dưới đây. Chú ý có kiểm tra điều kiện của h: 2&lt;=h&lt;=10. Nếu h nằm ngoài đoạn trên, yêu cầu người dùng nhập lại. (cho lựa chọn in tam giác xuôi hoặc ngược)</strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        import java.util.Scanner;
+
+        public class B12 {
+        
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                Scanner input = new Scanner(System.in);
+                System.out.println("Nhap chieu cao cua tam giac hinh sao trong khoang tu 2 den 10:");
+                int h = input.nextInt();
+                while(h &lt; 2 || h > 10){
+                    System.out.println("Chieu cao khong hop le, vui long nhap lai trong khoang tu 2 den 10:");
+                    h = input.nextInt();
+                }
+                System.out.println("Nhap 1 neu ban muon in ra tam giac xuoi, va bat ky so nao khac neu ban muon in ra tam giac nguoc");
+                int type = input.nextInt();
+                if ( type == 1 ){
+                    for(int i=1;i&lt;=h;i++){
+                        for(int j=1;j&lt;=i;j++)
+                            System.out.print("*");
+                        System.out.println();
+                    }
+                }
+                else{
+                    for(int i=1;i&lt;=h;i++){
+                        for(int j=h;j>=i;j--)
+                            System.out.print("*");
+                        System.out.println();
+                    }
+                }
+                
+            }
+        }                                                                                                                                                                                                                                                  
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/A/Picture12.png">
+                        </div>
+                    </li>
+                </ul>
+              </div>
+            </li>
+            <!-- B -->
+            <li>
+                <div class="collapsible-header"><strong>B/ Bài tập về hàm và thủ tục (Method & function)</strong></div>
+                <div class="collapsible-body">
+                  <ul class="collapsible">
+                      <li>
+                          <div class="collapsible-header"><strong>Bài 01: Cho số tự nhiên N bất kỳ
+                            Tính tổng S=1+1/(1+2) + 1/(1+2+3) +…+ 1/(1+2+3+..+N)</strong></div>
+                          <div class="collapsible-body">
+                              <p><Strong>Code:</Strong></p>
+                              <pre>
+        import java.util.Scanner;
+
+        public class B1 {
+        
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                Scanner input = new Scanner(System.in);
+                System.out.print("Nhap N: ");
+                int n = input.nextInt();
+                int h=0;
+                double s=0;
+                for(int i=1;i&lt;=n;i++){
+                    h+=i;
+                    s+=(double)1/h;
+                }
+                System.out.println(String.format("%.6f",s));
+            }
+        }
+                                
+                              </pre>
+                              <p><strong>Kết quả:</strong></p>
+                              <img src="img/B/Picture15.png">
+                          </div>
+                      </li>
+                      <li>
+                        <div class="collapsible-header"><strong>Bài 02: Cho số tự nhiên N bất kỳ, tính tổng
+                            S= 1+ 1/2! + 1/3! + … + 1/N!</strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        import java.util.Scanner;
+
+        public class B2 {
+        
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                Scanner input = new Scanner(System.in);
+                System.out.print("Nhap N: ");
+                int n = input.nextInt();
+                int h=1;
+                double s=0;
+                for(int i=1;i&lt;=n;i++){
+                    h*=i;
+                    s+=(double)1/h;
+                }
+                System.out.println(String.format("%.6f",s));
+            }
+        }                                
+                              
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/B/Picture16.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 03: Cho số tự nhiên N bất kỳ,
+                            tính tổng S=1+1/(1+2!) + 1/(1+2!+3!)+ ..+ 1/(1+2!+3!+..+N!)</strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        import java.util.Scanner;
+
+        public class B3 {
+        
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                Scanner input = new Scanner(System.in);
+                System.out.print("Nhap N: ");
+                int n = input.nextInt();
+                int h=1,k=0;
+                double s=0;
+                for(int i=1;i&lt;=n;i++){
+                    h*=i;
+                    k+=h;
+                    s+=(double)1/k;
+                }
+                System.out.println(String.format("%.6f",s));
+            }
+        }                                                                
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/B/Picture18.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 04: Dãy Fibonaxi 1, 2, 3, … F(k) = F(k-1) + F(k-2). Tính số Fibonaxi thứ N.</strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        import java.util.Scanner;
+
+        public class B4 {
+        
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                Scanner input = new Scanner(System.in);
+                System.out.print("Nhap N: ");
+                int n = input.nextInt();
+                int f1=1,f2=2,fn=0;
+                for(int i=3;i&lt;=n;i++){
+                    fn=f1+f2;
+                    f1=f2;
+                    f2=fn;
+                }
+                if ( n == 1 ) fn=f1;
+                if ( n == 2 ) fn=f2;
+                System.out.println(fn);
+            }
+        }                                                                                              
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/B/Picture18.png">
+                        </div>
+                    </li>
+                  </ul>
+                </div>
+            </li>
+            <!-- C -->
+            <li>
+                <div class="collapsible-header"><strong>C/ Bài tập về mảng (Array)  </strong></div>
+                <div class="collapsible-body">
+                  <ul class="collapsible">
+                      <li>
+                          <div class="collapsible-header"><strong>Bài 01: Cho một dãy số tự nhiên, viết chương trình sắp xếp dãy này theo thứ tự giảm dần.</strong></div>
+                          <div class="collapsible-body">
+                              <p><Strong>Code:</Strong></p>
+                              <pre>
+        import java.util.Scanner;
+
+        public class B1 {
+        
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                Scanner input = new Scanner(System.in);
+                System.out.print("Nhap N: ");
+                int n = input.nextInt();
+                int a[] = new int[n];
+                System.out.println("Nhap mang can sap xep: ");
+                for(int i=0;i&lt;n;i++){
+                    a[i]=input.nextInt();
+                }
+                for(int i=0;i&lt;n;i++)
+                    for(int j=i;j&lt;n;j++){
+                        if ( a[i] &lt; a[j] ){
+                            int tmp = a[i];
+                            a[i]=a[j];
+                            a[j]=tmp;
+                        }
+                    }
+                System.out.println(&quot;Mang sau khi sap xep giam dan: &quot;);
+                for(int i=0;i&lt;n;i++)
+                    System.out.print(a[i]+&quot; &quot;);
+            }
+        }
+                              </pre>
+                              <p><strong>Kết quả:</strong></p>
+                              <img src="img/C/Picture1.png">
+                          </div>
+                      </li>
+                      <li>
+                        <div class="collapsible-header"><strong>Bài 02: Cho số tự nhiên N bất kỳ, tính tổng
+                            S= 1+ 1/2! + 1/3! + … + 1/N!</strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        import java.util.Scanner;
+
+        public class B2 {
+        
+            public static int checkPrimary(int x){
+                for(int i=2;i&lt;=x/2;i++){
+                    if ( x%i == 0 ) return 0;
+                }
+                return 1;
+            }
+        
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                Scanner input = new Scanner(System.in);
+                System.out.print("Nhap N: ");
+                int n = input.nextInt();
+                int a[] = new int[n];
+                System.out.println("Nhap mang: ");
+                for(int i=0;i&lt;n;i++){
+                    a[i]=input.nextInt();
+                }
+                System.out.println(&quot;Cac so nguyen to: &quot;);
+                for(int i=0;i&lt;n;i++)
+                    if ( checkPrimary(a[i]) == 1 ){
+                        System.out.print(a[i]+" ");
+                    }
+                
+            }
+        }                                                              
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/C/Picture2.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 03: Cho một dãy các số tự nhiên, tìm và in ra 1 giá trị min của dãy này và tất cả các chỉ số ứng với giá trị min này.</strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        import java.util.Scanner;
+
+        public class B3 {
+        
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                Scanner input = new Scanner(System.in);
+                System.out.print("Nhap N: ");
+                int n = input.nextInt();
+                int a[] = new int[n];
+                System.out.println("Nhap mang: ");
+                for(int i=0;i&lt;n;i++){
+                    a[i]=input.nextInt();
+                }
+                int min_val=a[0];
+                for(int i=1;i&lt;n;i++)
+                    if ( min_val > a[i] ) min_val=a[i]; 
+                System.out.println("Gia tri nho nhat: "+min_val);
+                System.out.print("Cac vi tri co gia tri nho nhat: ");
+                for(int i=0;i&lt;n;i++)
+                    if ( min_val == a[i] ){
+                        System.out.print((i+1)+" ");
+                    }
+                
+            }
+        }                                                                                        
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/C/Picture3.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 04: Cho một dãy các số tự nhiên, tìm và in ra 1 giá trị max của dãy này và tất cả các chỉ số ứng với giá trị max này.</strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        public class B4 {
+
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                Scanner input = new Scanner(System.in);
+                System.out.print("Nhap N: ");
+                int n = input.nextInt();
+                int a[] = new int[n];
+                System.out.println("Nhap mang: ");
+                for(int i=0;i&lt;n;i++){
+                    a[i]=input.nextInt();
+                }
+                int max_val=a[0];
+                for(int i=1;i&lt;n;i++)
+                    if ( max_val &lt; a[i] ) max_val=a[i]; 
+                System.out.println("Gia tri lon nhat: "+max_val);
+                System.out.print("Cac vi tri co gia tri lon nhat: ");
+                for(int i=0;i&lt;n;i++)
+                    if ( max_val == a[i] ){
+                        System.out.print((i+1)+" ");
+                    }
+                
+            }
+        }                                                                                                                     
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/C/Picture4.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 05: Cho một dãy số tự nhiên, hãy đếm xem trong dãy số trên có bao nhiêu số nguyên tố, có bao nhiêu hợp số.</strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        import java.util.Scanner;
+
+        public class B5 {
+        
+            public static int checkPrimary(int x){
+                for(int i=2;i&lt;=x/2;i++){
+                    if ( x%i == 0 ) return 0;
+                }
+                return 1;
+            }
+        
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                Scanner input = new Scanner(System.in);
+                System.out.print("Nhap N: ");
+                int n = input.nextInt();
+                int a[] = new int[n];
+                System.out.println("Nhap mang: ");
+                for(int i=0;i&lt;n;i++){
+                    a[i]=input.nextInt();
+                }
+                int num_primary=0;
+                for(int i=0;i&lt;n;i++)
+                    num_primary+=checkPrimary(a[i]);
+                System.out.println("So cac so nguyen to: "+num_primary);
+                System.out.println("So cac so hop to: "+(n-num_primary));
+                
+            }
+        }                                                                                                                                                    
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/C/Picture5.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 06: Cho một dãy số tự nhiên, hãy in ra tất cả các số hạng của dãy trên thỏa mãn: số này là ước số thực sự của 1 số hạng khác trong dãy trên.</strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        import java.util.Scanner;
+
+        public class B6 {
+        
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                Scanner input = new Scanner(System.in);
+                System.out.print("Nhap N: ");
+                int n = input.nextInt();
+                int a[] = new int[n];
+                System.out.println("Nhap mang: ");
+                for(int i=0;i&lt;n;i++){
+                    a[i]=input.nextInt();
+                }
+                System.out.println("Cac so la uoc cua mot so khac trong day: ");
+                for(int i=0;i&lt;n;i++){
+                    int check = 0;
+                    for(int j=0;j&lt;n;j++){
+                        if ( i != j && a[j]%a[i] == 0 ) check=1;
+                    }
+                    if ( check == 1 ){
+                        System.out.print(a[i]+" ");
+                    }
+                }
+            }
+        }                                                                                                                                             
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/C/Picture6.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 07: Cho một dãy số tự nhiên, hãy tìm 1 số tự nhiên nhỏ nhất sao cho không bằng bất cứ số nào trong dãy trên.</strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        import java.util.Scanner;
+
+        public class B7 {
+        
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                Scanner input = new Scanner(System.in);
+                System.out.print("Nhap N: ");
+                int n = input.nextInt();
+                int a[] = new int[n];
+                int d[] = new int[n];
+                System.out.println("Nhap mang: ");
+                for(int i=0;i&lt;n;i++){
+                    a[i]=input.nextInt();
+                    d[i]=0;
+                }
+                for(int i=0;i&lt;n;i++){
+                    for(int j=i+1;j<n;j++)
+                        if ( a[i] == a[j] ) {
+                            d[i]=1;
+                            d[j]=1;
+                        }
+                }
+                int min_val=Integer.MAX_VALUE;
+                for(int i=1;i&lt;n;i++){
+                    if ( min_val > a[i] && d[i] == 0 ) min_val=a[i];
+                }
+                    
+                System.out.println("Gia tri nho nhat khong bi trung: "+min_val);
+                
+            }
+        }                                                                                                                                     
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/C/Picture7.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 08: Cho một dãy số nguyên bất kỳ, hãy xóa đi trong dãy này các số hạng =0 và in ra màn hình các số còn lại.</strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        import java.util.Scanner;
+
+        public class B8 {
+        
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                Scanner input = new Scanner(System.in);
+                System.out.print("Nhap N: ");
+                int n = input.nextInt();
+                int a[] = new int[n];
+                System.out.println("Nhap mang: ");
+                for(int i=0;i&lt;n;i++){
+                    a[i]=input.nextInt();
+                }
+                System.out.println("Cac so khac 0: ");
+                for(int i=0;i&lt;n;i++){
+                    if ( a[i] != 0  ) System.out.print(a[i]+" ");
+                }
+            }
+        }                                                                                                                      
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/C/Picture8.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 9: Cho một dãy số nguyên bất kỳ, cho trước 1 số c. Hãy đếm có bao nhiêu số của dãy trên =c; >c; &lt;c.</strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        public class B9 {
+
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                Scanner input = new Scanner(System.in);
+                System.out.print("Nhap N: ");
+                int n = input.nextInt();
+                System.out.print("Nhap c: ");
+                int c = input.nextInt();
+                int d1=0,d2=0,d3=0;
+                int a[] = new int[n];
+                System.out.println("Nhap mang: ");
+                for(int i=0;i&lt;n;i++){
+                    a[i]=input.nextInt();
+                    if ( a[i] &lt; c )  d1++;
+                    if ( a[i] == c ) d2++;
+                    if ( a[i] > c )  d3++;
+                }
+                System.out.println("So cac so nho hon "+c+": "+d1);
+                System.out.println("So cac so bang "+c+": "+d2);
+                System.out.println("So cac so lon hon "+c+": "+d3);
+        
+            }
+        }                                                                                                                                                      
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/C/Picture9.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 10: Cho một dãy số nguyên bất kỳ, hãy tìm ra 1 một dãy số liền nhau dài nhất bao gồm các số bằng nhau. Hãy in ra số lượng và các chỉ số đầu tiên của dãy con này.</strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        import java.util.Scanner;
+
+        public class B10 {
+        
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                Scanner input = new Scanner(System.in);
+                System.out.print("Nhap N: ");
+                int n = input.nextInt();
+                int a[] = new int[n];
+                System.out.println("Nhap mang: ");
+                for(int i=0;i&lt;n;i++){
+                    a[i]=input.nextInt();
+                }
+                int d=1,x=0,max_long=0;
+                for(int i=1;i&lt;n;i++){
+                    if ( a[i] == a[i-1] ) d++;
+                    else d=1;
+                    if ( d > max_long ){
+                        x=i-d+1;
+                        max_long=d;
+                    }
+                }
+                System.out.println("Day bang nhau dai nhat co do dai la: "+max_long);
+                System.out.println("Day bang nhau dai nhat bat dau tu: "+x);
+            }
+        }                                                                                                                                                                                     
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/C/Picture10.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 11: Cho một dãy số nguyên bất kỳ. Hãy tìm 1 một dãy con liên tục đơn điệu tăng dài nhất của dãy trên.</strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        import java.util.Scanner;
+
+        public class B11 {
+        
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                Scanner input = new Scanner(System.in);
+                System.out.print("Nhap N: ");
+                int n = input.nextInt();
+                int a[] = new int[n];
+                System.out.println("Nhap mang: ");
+                for(int i=0;i&lt;n;i++){
+                    a[i]=input.nextInt();
+                }
+                int d=1,x=0,max_long=0;
+                for(int i=1;i&lt;n;i++){
+                    if ( a[i] > a[i-1] ) d++;
+                    else d=1;
+                    if ( d > max_long ){
+                        x=i-d+1;
+                        max_long=d;
+                    }
+                }
+                System.out.println("Day con tang lien tuc dai nhat la: ");
+                for(int i=x;i&lt;n;i++){
+                    System.out.print(a[i]+" ");
+                }
+            }
+        }                                                                                                                                                                                                                    
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/C/Picture11.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 12: Dãy số a[ ] được gọi là dãy con của b[ ] nếu từ b [ ] xóa đi 1 vài số sẽ thu được   a[ ]. Cho trước 2 dãy số nguyên a[ ]; b[ ]. Hãy kiểm tra xem a[ ] có là dãy con của b[ ] hay không?</strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        import java.util.Scanner;
+
+        public class B12 {
+        
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                Scanner input = new Scanner(System.in);
+                System.out.print("Nhap N: ");
+                int n = input.nextInt();
+                int a[] = new int[n];
+                System.out.println("Nhap mang A: ");
+                for(int i=0;i&lt;n;i++){
+                    a[i]=input.nextInt();
+                }
+                System.out.print("Nhap M: ");
+                int m = input.nextInt();
+                int b[] = new int[m];
+                System.out.println("Nhap mang B: ");
+                for(int i=0;&lt;m;i++){
+                    b[i]=input.nextInt();
+                }
+                
+                int j=0;;
+                for(int i=0;&lt;m;i++){
+                    if ( j &lt; n ){
+                        if ( b[i] == a[j] ) j++;
+                    }
+                }
+                if ( j == n ){
+                    System.out.println("A la day con cua B ");
+                }
+                else{
+                    System.out.println("A khong la day con cua B ");
+                }
+            }
+        }                                                                                                                                                                                                                                                  
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/C/Picture12.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 13: Nhập vào kích thước ô vuông n*n, kiểm tra 3<=n<= 8. Hiển thị ra màn hình kết quả như màn hình</strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        import java.util.Scanner;
+
+        public class B13 {
+        
+            public static int check(int x, int y, int n){
+                if ( x &lt; 0 || y &lt; 0 || x >= n || y >=n ) return 0;
+                return 1;
+            }
+        
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                Scanner input = new Scanner(System.in);
+                System.out.print("Nhap N: ");
+                int n = input.nextInt();
+                while( n &lt; 3 || n > 8 ){
+                    System.out.print("Nhap N trong khoang tu 3 den 8: ");
+                    n = input.nextInt();
+                }
+                int a[][] = new int[n][n];
+                for(int i=0;i&lt;n;i++)
+                    for(int j=0;j&lt;n;j++)
+                        a[i][j]=0;
+                int u[] = {0,1,0,-1};
+                int v[] = {1,0,-1,0};
+                int dem=0,k=0,x=0,y=0;
+                while( dem &lt; n*n ){
+                    a[x][y] = ++dem;
+                    if ( check(x+u[k],y+v[k],n) == 0 || a[x+u[k]][y+v[k]] != 0 ) k=(k+1)%4;
+                    x+=u[k];
+                    y+=v[k];
+                }
+                for(int i=0;i&lt;n;i++){
+                    for(int j=0;j&lt;n;j++)
+                        System.out.print(a[i][j]+" ");
+                    System.out.println();
+                }
+                    
+            }
+        }                                                                                                                                                                                                                                                                             
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/C/Picture13.png">
+                        </div>
+                    </li>
+                  </ul>
+                </div>
+            </li>
+            <!-- D -->
+            <li>
+                <div class="collapsible-header"><strong>D/ Bài tập về xâu (String) </strong></div>
+                <div class="collapsible-body">
+                  <ul class="collapsible">
+                      <li>
+                          <div class="collapsible-header"><strong>Bài 01: Cho trước 1 xâu ký tự là họ tên người đầy đủ nhưng khi nhập có thể thừa một số dấu cách. Hãy xóa đi các dấu cách thừa và in ra họ tên chính xác.</strong></div>
+                          <div class="collapsible-body">
+                              <p><Strong>Code:</Strong></p>
+                              <pre>
+        import java.util.Scanner;
+
+        public class B1 {
+        
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                Scanner input = new Scanner(System.in);
+                System.out.print("Nhap ten: ");
+                StringBuilder ten = new StringBuilder(input.nextLine());
+                for(int i=0;i&ltten.length()-1;i++){
+                    if ( ten.charAt(i) == ' ' && ten.charAt(i+1) == ' ' ) {
+                        ten.deleteCharAt(i);
+                        i--;
+                    }
+                }
+                if ( ten.charAt(0) == ' ' ) ten.deleteCharAt(0);
+                if ( ten.charAt(ten.length()-1) == ' ' ) ten.deleteCharAt(ten.length()-1);
+        
+                System.out.print("Ten sau khi chinh sua: "+ten.toString());
+            }
+        }                                
+                              </pre>
+                              <p><strong>Kết quả:</strong></p>
+                              <img src="img/D/Picture1.png">
+                          </div>
+                      </li>
+                      <li>
+                        <div class="collapsible-header"><strong>Bài 02: Cho trước xâu ký tự bất kỳ. Hãy đếm xem trong xâu có bao nhiêu lần xuất hiện xâu con “abc”</strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        import java.util.Scanner;
+
+        public class B2 {
+        
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                Scanner input = new Scanner(System.in);
+                System.out.print("Nhap xau: ");
+                String s = input.nextLine();
+                int dem=0;
+                for(int i=0;i&lts.length()-2;i++){
+                    if ( s.charAt(i) == 'a' && s.charAt(i+1) == 'b' && s.charAt(i+2) == 'c' ) dem++;
+                }
+                System.out.print("So lan xuat hien xau abc: "+dem);
+            }
+        }                         
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/D/Picture2.png">
+                        </div>
+                      </li>
+                      <li>
+                        <div class="collapsible-header"><strong>Bài 03: Cho trước 1 xâu ký tự là họ tên người đầy đủ, hãy tách ra phần tên của người này</strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        import java.util.Scanner;
+
+        public class B3 {
+        
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                Scanner input = new Scanner(System.in);
+                System.out.print("Nhap ten: ");
+                String s = input.nextLine();
+                String ten="";
+                for(int i=s.length()-1;i>0;i--){
+                    if ( s.charAt(i) == ' ' ) {
+                        ten = s.substring(i+1,s.length());
+                        break;
+                    }
+                }
+                System.out.println("Ten: "+ten);
+            }
+        }                                                         
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/D/Picture3.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 04: Cho trước 1 xâu ký tự là họ tên người đầy đủ, hãy tách ra phần họ của người này</strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        import java.util.Scanner;
+
+        public class B4 {
+        
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                Scanner input = new Scanner(System.in);
+                System.out.print("Nhap ten: ");
+                String s = input.nextLine();
+                String ho="", dem="", ten="";
+                for(int i=0;i&lts.length();i++){
+                    if ( s.charAt(i) == ' ' ) {
+                        ho = s.substring(0,i);
+                        break;
+                    }
+                }
+                for(int i=s.length()-1;i>0;i--){
+                    if ( s.charAt(i) == ' ' ) {
+                        ten = s.substring(i+1,s.length());
+                        break;
+                    }
+                }
+                dem = s.substring(ho.length()+1,s.length()-ten.length()-1);
+                System.out.println("Ho: "+ho+" "+dem);
+            }
+        }                                                            
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/D/Picture4.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 05: Cho một xâu ký tự bao gồm toàn các ký tự 0,1. Hãy biến đổi xâu này theo cách 0 thành 1, 1 thành 0 và in ra kết quả.</strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        import java.util.Scanner;
+
+        public class B5 {
+        
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                Scanner input = new Scanner(System.in);
+                System.out.println("Nhap xau: ");
+                String s = input.nextLine();
+                StringBuilder r = new StringBuilder("");
+                for(int i=0;i&lts.length();i++){
+                    int x = (int)'1'-(int)s.charAt(i);
+                    char c = (char)('0'+x);
+                    r.append(c);
+                }
+                System.out.println("Xau bien doi:\n"+r.toString());
+            }
+        }                                                     
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/D/Picture5.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 06: Cho trước xâu ký tự S, in ra xâu S1 ngược lại xâu S.</strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        import java.util.Scanner;
+
+        public class B6 {
+        
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                Scanner input = new Scanner(System.in);
+                System.out.println("Nhap xau: ");
+                String s = input.nextLine();
+                StringBuilder r = new StringBuilder("");
+                for(int i=s.length()-1;i>=0;i--){
+                    r.append(s.charAt(i));
+                }
+                System.out.println("Xau bien doi:\n"+r.toString());
+            }
+        }                                                                                   
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/D/Picture6.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 07: Cho trước xâu ký tự S. Hãy biến đổi S theo quy tắc sau: Chữ số thì biến thành “$”, ký tự thì giữ nguyên.</strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+                                import java.util.Scanner;
+
+                                public class B7 {
+                                
+                                    public static void main(String[] args) {
+                                        System.out.println("20180108 Le Tuan Khang");
+                                        Scanner input = new Scanner(System.in);
+                                        System.out.println("Nhap xau: ");
+                                        String s = input.nextLine();
+                                        StringBuilder r = new StringBuilder("");
+                                        for(int i=0;i&lt;s.length();i++){
+                                            int x = (int)s.charAt(i);
+                                            if ( (int)'0' &lt;= x && x &lt;= (int)'9' ) r.append('$');
+                                            else r.append((char)x);
+                                        }
+                                        System.out.println("Xau bien doi:\n"+r.toString());
+                                    }
+                                }                                                                                                                  
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/D/Picture7.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 08: Cho trước 2 xâu ký tự S1, S2. Hãy đếm xem xâu S1 xuất hiện trong S2 tại bao nhiêu vị trí.</strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+                                import java.util.Scanner;
+
+        public class B8 {
+
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                Scanner input = new Scanner(System.in);
+                System.out.print("Nhap xau s1: ");
+                String s1 = input.nextLine();
+                System.out.print("Nhap xau s2: ");
+                String s2 = input.nextLine();
+                int dem=0;
+                for(int i=0;i&lt;=s2.length()-s1.length();i++){
+                    int check=1;
+                    for(int j=0;j&lt;s1.length();j++){
+                        if ( s1.charAt(j) != s2.charAt(i+j) ){
+                            check=0;
+                            break;
+                        }
+                    }
+                    dem+=check;
+                }
+                System.out.println("So lan s1 xuat hien trong s2: "+dem);
+            }
+        }                                                                                                                 
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/D/Picture8.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 09: Cho xâu S và 2 chỉ số i, j. Hãy đổi chỗ 2 vị trí i, j trong S.</strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        import java.util.Scanner;
+
+        import java.util.Scanner;
+
+        public class B9 {
+        
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                Scanner input = new Scanner(System.in);
+                System.out.print("Nhap xau s: ");
+                String s = input.nextLine();
+                System.out.print("Nhap 2 vi tri doi cho: ");
+                int u=input.nextInt(), v= input.nextInt();
+        
+                StringBuilder r = new StringBuilder("");
+                for(int i=0;i&lt;s.length();i++){
+                    int x = (int)s.charAt(i);
+                    if ( i == u-1 ) r.append(s.charAt(v-1));
+                    else if ( i == v-1 ) r.append(s.charAt(u-1));
+                    else r.append(s.charAt(i));
+                }
+                System.out.println("Xau bien doi:\n"+r.toString());
+            }
+        }                                                                                                                                               
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/D/Picture9.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 10: Cho mảng xâu ký tự S1, S2, ..Sn. Hãy tìm và in ra phần tử xâu có độ dài lớn nhất.</strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        import java.util.Scanner;
+
+        public class B10 {
+        
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                Scanner input = new Scanner(System.in);
+                System.out.print("Nhap so luong cac xau n: ");
+                int n = input.nextInt(), max=0, j=0;
+                String s[] = new String[n];
+                s[0] = input.nextLine();
+                System.out.println("Nhap mang xau: ");
+                for(int i=0;i&lt;n;i++){
+                    s[i] = input.nextLine();
+                    if ( s[i].length() > max ) {
+                        max=s[i].length();
+                        j=i;
+                    }
+                }
+                System.out.println("Xau co do dai lon nhat:\n"+s[j]);
+            }
+        }                                                                                                                                                                              
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/D/Picture10.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 11: Cho danh sách họ tên đầy đủ học sinh. Hãy đếm xem có bao nhiêu bạn tên “An”.</strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        import java.util.Scanner;
+
+        public class B11 {
+        
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                Scanner input = new Scanner(System.in);
+                System.out.print("Nhap so hoc sinh: ");
+                int n = input.nextInt();
+                System.out.println("Nhap danh sach ten: ");
+                input.nextLine();
+                int x=0;
+                for(int j=0;j&lt;n;j++){
+                    String s = input.nextLine();
+                    String ho="",dem="",ten="";
+                    
+                    for(int i=0;i&lt;s.length();i++){
+                        if ( s.charAt(i) == ' ' ) {
+                            ho = s.substring(0,i);
+                            break;
+                        }
+                    }
+                    for(int i=s.length()-1;i>0;i--){
+                        if ( s.charAt(i) == ' ' ) {
+                            ten = s.substring(i+1,s.length());
+                            break;
+                        }
+                    }
+                    dem = s.substring(ho.length()+1,s.length()-ten.length()-1);
+        
+                    if ( ten.equals("An") ) x++;
+                }
+                
+                System.out.println("So hoc sinh ten An la: "+x);
+            }
+        }                                                                                                                                                                                                             
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/D/Picture11.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 12: Cho danh sách họ tên đầy đủ học sinh. Hãy đếm xem có bao nhiêu bạn có phần đệm là  “Thị”.</strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        import java.util.Scanner;
+
+        public class B12 {
+        
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                Scanner input = new Scanner(System.in);
+                System.out.print("Nhap so hoc sinh: ");
+                int n = input.nextInt();
+                System.out.println("Nhap danh sach ten: ");
+                input.nextLine();
+                int x=0;
+                for(int j=0;j&lt;n;j++){
+                    String s = input.nextLine();
+                    String ho="",dem="",ten="";
+                    
+                    for(int i=0;i&lt;s.length();i++){
+                        if ( s.charAt(i) == ' ' ) {
+                            ho = s.substring(0,i);
+                            break;
+                        }
+                    }
+                    for(int i=s.length()-1;i>0;i--){
+                        if ( s.charAt(i) == ' ' ) {
+                            ten = s.substring(i+1,s.length());
+                            break;
+                        }
+                    }
+                    dem = s.substring(ho.length()+1,s.length()-ten.length()-1);
+        
+                    if ( dem.equals("Thi") ) x++;
+                }
+                
+                System.out.println("So hoc sinh ten dem Thi la: "+x);
+            }
+        }                                                                                                                                                                                                                                          
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/D/Picture12.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 13: Cho danh sách họ tên đầy đủ học sinh. Hãy đếm xem có bao nhiêu bạn  có tên bắt đầu bằng chữ “H”.</strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        import java.util.Scanner;
+
+        public class B13 {
+        
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                Scanner input = new Scanner(System.in);
+                System.out.print("Nhap so hoc sinh: ");
+                int n = input.nextInt();
+                System.out.println("Nhap danh sach ten: ");
+                input.nextLine();
+                int x=0;
+                for(int j=0;j&lt;n;j++){
+                    String s = input.nextLine();
+                    String ho="",dem="",ten="";
+                    
+                    for(int i=0;i&lt;s.length();i++){
+                        if ( s.charAt(i) == ' ' ) {
+                            ho = s.substring(0,i);
+                            break;
+                        }
+                    }
+                    for(int i=s.length()-1;i>0;i--){
+                        if ( s.charAt(i) == ' ' ) {
+                            ten = s.substring(i+1,s.length());
+                            break;
+                        }
+                    }
+                    dem = s.substring(ho.length()+1,s.length()-ten.length()-1);
+        
+                    if ( ten.charAt(0) == 'H' ) x++;
+                }
+                
+                System.out.println("So hoc sinh ten bang dau bang H la: "+x);
+            }
+        }                                                                                                                                                                                                                                                                         
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/D/Picture13.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 14: Dãy xâu ký tự S1, S2,… được cho theo quy tắc sau: S1= “1111100000”, Sk thu được từ Sk-1 bằng cách thay đổi cho lần lượt các vị trí  1-2;  2-3;  3-4; 4-5; 5-6;  6-7; 7-8;  8-9; 9-10. Cho trước số tự nhiên N, Hãy in ra xâu Sn.</strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        import java.util.Scanner;
+
+        public class B14 {
+        
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                Scanner input = new Scanner(System.in);
+                System.out.print("Nhap n: ");
+                int n = input.nextInt();
+                StringBuilder s = new StringBuilder("1111100000");
+                for(int i=1;i&lt;n;i++){
+                    s.insert(0, s.charAt(9));
+                    s.deleteCharAt(9);
+                }
+                System.out.println("Xau thu n la: "+s.toString());
+            }
+        }                                                                                                                                                                                                                                                                    
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/D/Picture14.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 15: Cho trước 2 xâu ký tự S, S2. Hãy chèn xâu S1 vào giữa 2 xâu S và xâu S2 và in kết quả.</strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        import java.util.Scanner;
+
+        public class B15 {
+        
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                Scanner input = new Scanner(System.in);
+                String s,s1,s2;
+                System.out.print("Nhap xau s: ");
+                s = input.nextLine();
+                System.out.print("Nhap xau s2: ");
+                s2 = input.nextLine();
+                System.out.print("Nhap xau s1: ");
+                s1 = input.nextLine();
+                String s3 = s + s1 + s2;
+                
+                System.out.println("Ket qua chen xau s1 giua s2 va s3 la: "+s3);
+            }
+        }                                                                                                                                                                                                                                                                                                  
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/D/Picture15.png">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><strong>Bài 16: Cho trước 2 xâu S1, S2. Hãy xét xem xâu S1 có phải là xâu con của S2 nếu xóa bỏ vài kí tự của xâu S2 ta được xâu S1.</strong></div>
+                        <div class="collapsible-body">
+                            <p><Strong>Code:</Strong></p>
+                            <pre>
+        import java.util.Scanner;
+
+        public class B16 {
+        
+            public static void main(String[] args) {
+                System.out.println("20180108 Le Tuan Khang");
+                Scanner input = new Scanner(System.in);
+                System.out.print("Nhap xau s1: ");
+                String s1 = input.nextLine();
+                System.out.print("Nhap xau s2: ");
+                String s2 = input.nextLine();
+                int n = s1.length(),m = s2.length();
+                
+                int j=0;
+                for(int i=0;i&lt;m;i++){
+                    if ( j &lt; n ){
+                        if ( s2.charAt(i) == s1.charAt(j) ) j++;
+                    }
+                }
+                if ( j == n ){
+                    System.out.println("s1 la xau con cua s2 ");
+                }
+                else{
+                    System.out.println("s1 khong la xau con cua s2 ");
+                }
+            }
+        }                                                                                                                                                                                                                                                                                                                                
+                            </pre>
+                            <p><strong>Kết quả:</strong></p>
+                            <img src="img/D/Picture16.png">
+                        </div>
+                    </li>
+                    </ul>
+                </div>
+            </li>
+                      
+        </ul>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $('.collapsible').collapsible();
+        });
+    </script>
+    </body>
+</html>
