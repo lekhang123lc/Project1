@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Quản lý kết quả học tập</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!--    <link rel="stylesheet" href="../../css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<header class="container">
+    <h1 th:text="${'Thêm kết quả học tập môn '+subject.getName()}"></h1>
+</header>
+<main class="container">
+    <div class="row">
+        <div class="col-2">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/sinh-vien">Quản lý sinh viên</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/khoa-vien">Quản lý khoa viện</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/lop">Quản lý lớp học</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/mon-hoc">Quản lý môn học</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/thong-ke">Thống kê</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-10">
+            <form th:action="@{/ket-qua/luu?subject_id={id}(id=${subject.getId()})}" method="post">
+                <div>
+                    <input type="hidden" name="id" value="0" class="form-control"/>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <label>Mã số sinh viên</label>
+                    </div>
+                    <div class="col-10">
+                        <input type="number" name="student_id" class="form-control"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <label>Điểm quá trình</label>
+                    </div>
+                    <div class="col-10">
+                        <input type="number" name="process_result" step="0.1" class="form-control"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <label>Điểm cuối kỳ</label>
+                    </div>
+                    <div class="col-10">
+                        <input type="number" name="final_result" step="0.1" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <label>Học kỳ</label>
+                    </div>
+                    <div class="col-10">
+                        <input type="number" name="semester" step="1" class="form-control">
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-success" value="Lưu"/>
+            </form>
+        </div>
+    </div>
+    </div>
+</main>
+<footer>
+
+</footer>
+</nav>
+</body>
+</html>

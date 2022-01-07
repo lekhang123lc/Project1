@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Quản lý Môn học</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!--    <link rel="stylesheet" href="../../css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <header class="container">
+        <h1>Quản lý Môn học</h1>
+    </header>
+    <main class="container">
+        <div class="row">
+            <div class="col-2">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sinh-vien">Quản lý sinh viên</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/mon-hoc">Quản lý khoa viện</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/lop">Quản lý lớp học</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/mon-hoc">Quản lý môn học</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/thong-ke">Thống kê</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-10">
+                <a href="/mon-hoc/them" class="btn btn-success">Tạo mới</a>
+                <table class="table">
+                    <tr>
+                        <th width="10%">#</th>
+                        <th width="20%">Mã Môn học</th>
+                        <th width="30%">Tên Môn học</th>
+                        <th width="20%">Trọng số quá trình</th>
+                        <th width="20%">Số tín chỉ</th>
+                    </tr>
+                    <tr th:each="subject : ${subjects}">
+                        <td th:text="${subject.getId()}"/>
+                        <td th:text="${subject.getCode()}"/>
+                        <td><a th:text="${subject.getName()}" th:href="@{/ket-qua/?subject_id={id}(id=${subject.getId()})}"></a></td>
+                        <td th:text="${subject.getProcess_weight()}"/>
+                        <td th:text="${subject.getCredit()}"/>
+                        <td>
+                            <a th:href="@{/mon-hoc/sua?id={id}(id=${subject.getId()})}" class="btn btn-primary">Sửa</a>
+                        </td>
+                        <td>
+                            <a th:href="@{/mon-hoc/xoa?id={id}(id=${subject.getId()})}" class="btn btn-danger">Xóa</a>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</nav>
+</body>
+</html>

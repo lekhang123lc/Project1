@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Danh sách các khoa - viện</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!--    <link rel="stylesheet" href="../../css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<header class="container">
+    <h1>Sửa thông tin Khoa-Viện</h1>
+</header>
+<main class="container">
+    <div class="row">
+        <div class="col-2">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/sinh-vien">Quản lý sinh viên</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/khoa-vien">Quản lý khoa viện</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/lop">Quản lý lớp học</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/mon-hoc">Quản lý môn học</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/thong-ke">Thống kê</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-10">
+            <form action="/khoa-vien/luu" method="post">
+                <div>
+                    <input type="hidden" name="id" th:value="${in.getId()}" class="form-control"/>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <label>Tên Khoa-Viện</label>
+                    </div>
+                    <div class="col-10">
+                        <input type="text" name="name" class="form-control" th:value="${in.getId()}"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <label>Mô tả</label>
+                    </div>
+                    <div class="col-10">
+                        <textarea cols="20" rows="10" type="text" name="desc" class="form-control" th:text="${in.getDesc()}"/></textarea>
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-success" value="Lưu"/>
+            </form>
+        </div>
+    </div>
+    </div>
+</main>
+<footer>
+
+</footer>
+</nav>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Quản lý kết quả học tập</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!--    <link rel="stylesheet" href="../../css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <header class="container">
+        <h1 th:text="${'Kết quả học tập môn '+subject.getName()}"></h1>
+    </header>
+    <main class="container">
+        <div class="row">
+            <div class="col-2">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sinh-vien">Quản lý sinh viên</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/khoa-vien">Quản lý khoa viện</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/lop">Quản lý lớp học</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/mon-hoc">Quản lý môn học</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/thong-ke">Thống kê</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-10">
+                <form action="/ket-qua/them-danh-sach" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="subject_id" th:value="${subject.getId()}">
+                    <div class="row">
+                        <div class="col-8"><input name="file" type="file" class="form-control"/></div>
+                        <div class="col-4"><input type="submit" class="btn btn-primary" value="Thêm"/></div>
+                    </div>
+                </form>
+                <a th:href="${'/ket-qua/xuat-danh-sach?subject_id='+subject.getId()}" class="btn btn-warning">Xuất danh sách</a>
+                <a th:href="@{/ket-qua/them?subject_id={id}(id=${subject.getId()})}" class="btn btn-success">Tạo mới</a>
+                <table class="table">
+                    <tr>
+                        <th width="10%">MSSV</th>
+                        <th width="30%">Tên sinh viên</th>
+                        <th width="10%">Điểm quá trình</th>
+                        <th width="10%">Trọng số quá trình</th>
+                        <th width="10%">Điểm cuối kỳ</th>
+                        <th width="10%">Điểm tổng kết</th>
+                        <th width="10%">Học kỳ</th>
+                        <th width="10%">Điểm chữ</th>
+                    </tr>
+                    <tr th:each="result : ${results}">
+                        <td th:text="${result.getStudent().getId()}"/>
+                        <td><a th:text="${result.getStudent().getName()}" th:href="@{/sinh-vien/sua?id={id}(id=${result.getStudent().getId()})}"></a></td>
+                        <td th:text="${result.getProcess_result()}"/>
+                        <td th:text="${result.getSubject().getProcess_weight()}"/>
+                        <td th:text="${result.getFinal_result()}"/>
+                        <td th:text="${result.getSummary()}"/>
+                        <td th:text="${result.getSemester()}"/>
+                        <td th:text="${result.getType()}"/>
+                        <td>
+                            <a th:href="@{/ket-qua/sua(subject_id=${subject.getId()}, id=${result.getId()})}" class="btn btn-primary">Sửa</a>
+                        </td>
+                        <td>
+                            <a th:href="@{/ket-qua/xoa(subject_id=${subject.getId()}, id=${result.getId()})}" class="btn btn-danger">Xóa</a>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</nav>
+</body>
+</html>

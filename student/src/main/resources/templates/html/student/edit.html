@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Sửa thông tin sinh viên</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!--    <link rel="stylesheet" href="../../css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<header class="container">
+    <h1>Sửa thông tin sinh viên</h1>
+</header>
+<main class="container">
+    <div class="row">
+        <div class="col-2">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/sinh-vien">Quản lý sinh viên</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/khoa-vien">Quản lý khoa viện</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/lop">Quản lý lớp học</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/mon-hoc">Quản lý môn học</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/thong-ke">Thống kê</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-10">
+            <form action="/sinh-vien/luu" method="post">
+                <div class="row">
+                    <div class="col-2">
+                        <label>Mã số sinh viên</label>
+                    </div>
+                    <div class="col-10">
+                        <input type="number" name="id" class="form-control" th:value="${student.getId()}"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <label>Tên Sinh Viên</label>
+                    </div>
+                    <div class="col-10">
+                        <input type="text" name="name" class="form-control" th:value="${student.getName()}"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <label>Ngày sinh</label>
+                    </div>
+                    <div class="col-10">
+                        <input type="date" name="birth" class="form-control" th:value="${student.getBrith()}"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <label>Thuộc Lớp</label>
+                    </div>
+                    <div class="col-10">
+                        <select class="custom-select" name="grade_id">
+                            <option th:each="grade : ${grades}" th:value="${grade.getId()}" th:text="${grade.getName()}" th:selected="${grade.getId()==student.getGrade().getId()}"></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <label>Khóa</label>
+                    </div>
+                    <div class="col-10">
+                        <input type="number" name="year" class="form-control" th:value="${student.getYear()}"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <label>Email</label>
+                    </div>
+                    <div class="col-10">
+                        <input type="text" name="email" class="form-control" th:value="${student.getEmail()}"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <label>Giới tính</label>
+                    </div>
+                    <div class="col-10">
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadio1" name="gender" class="custom-control-input" value=0 th:checked="${student.getGender()==0}">
+                            <label class="custom-control-label" for="customRadio1">Nam</label>
+                          </div>
+                          <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadio2" name="gender" class="custom-control-input" value=1 th:checked="${student.getGender()==1}">
+                            <label class="custom-control-label" for="customRadio2">Nữ</label>
+                          </div>
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-success" value="Lưu"/>
+            </form>
+            <div>
+                <h3 th:text="${'CPA: '+cpa}"></h3>
+                <table class="table">
+                    <tr>
+                        <th width="25%">Kỳ học</th>
+                        <th width="25%">Số tín đã qua</th>
+                        <th width="25%">Số tín nợ</th>
+                        <th width="25%">GPA</th>
+                    </tr>
+                    <tr th:each="semester : ${semesters}">
+                        <td th:text="${semester.getId()}"/>
+                        <td th:text="${semester.getCredit()}"/>
+                        <td th:text="${semester.getCredit_debt()}"/>
+                        <td th:text="${semester.getGPA()}"/>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+</main>
+<footer>
+
+</footer>
+</nav>
+</body>
+</html>

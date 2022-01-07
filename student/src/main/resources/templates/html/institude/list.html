@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Danh sách các khoa - viện</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!--    <link rel="stylesheet" href="../../css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <header class="container">
+        <h1>Quản lý Khoa-Viện</h1>
+    </header>
+    <main class="container">
+        <div class="row">
+            <div class="col-2">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sinh-vien">Quản lý sinh viên</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/khoa-vien">Quản lý khoa viện</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/lop">Quản lý lớp học</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/mon-hoc">Quản lý môn học</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/thong-ke">Thống kê</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-10">
+                <a href="/khoa-vien/them" class="btn btn-success">Tạo mới</a>
+                <table class="table">
+                    <tr>
+                        <th width="10%">#</th>
+                        <th width="20%">Tên Khoa-Viện</th>
+                        <th width="70%">Mô tả</th>
+                    </tr>
+                    <tr th:each="in : ${ins}">
+                        <td th:text="${in.getId()}"/>
+                        <td th:text="${in.getName()}"/>
+                        <td th:text="${in.getDesc()}"/>
+                        <td>
+                            <a th:href="@{/khoa-vien/sua?id={id}(id=${in.getId()})}" class="btn btn-primary">Sửa</a>
+                        </td>
+                        <td>
+                            <a th:href="@{/khoa-vien/xoa?id={id}(id=${in.getId()})}" class="btn btn-danger">Xóa</a>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</nav>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thống kê</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!--    <link rel="stylesheet" href="../../css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <header class="container">
+        <h1>Thống kê</h1>
+    </header>
+    <main class="container">
+        <div class="row">
+            <div class="col-2">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sinh-vien">Quản lý sinh viên</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/mon-hoc">Quản lý khoa viện</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/lop">Quản lý lớp học</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/mon-hoc">Quản lý môn học</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/thong-ke">Thống kê</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-10">
+                <form action="/thong-ke" method="get">
+                    <div class="row">
+                        <div class="col-2"><label>Kỳ học:</label></div>
+                        <div class="col-3"><input name="semester" type="number" th:value="${s.getSemester()}"/></div>
+                        <div class="col-2"><label>Môn học:</label></div>
+                        <div class="col-3">
+                            <select class="custom-select" name="subject_id">
+                                <option th:each="subject : ${subjects}" th:value="${subject.getId()}" th:text="${subject.getName()}" th:selected="${subject.getId()==s.getSubject_id()}"></option>
+                            </select>
+                        </div>
+                        <div class="col-2"><input type="submit" class="btn btn-primary" value="Thống kê"></div>
+                    </div>
+                </form>
+                
+                <table class="table">
+                    <tr>
+                        <th>Điểm</th>
+                        <th>Số sinh viên</th>
+                    </tr>
+                    <tr th:each="t : ${s.getType().keySet()}">
+                        <td th:text="${t}"/>
+                        <td th:text="${s.getType().get(t)}"/>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</nav>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Quản lý sinh viên</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!--    <link rel="stylesheet" href="../../css/bootstrap.min.css">-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css">-->
+</head>
+<body>
+<header class="container">
+    <h1>Quản lý sinh viên</h1>
+</header>
+<main class="container">
+    <div class="row">
+        <div class="col-2">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/sinh-vien">Quản lý sinh viên</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/khoa-vien">Quản lý khoa viện</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/lop">Quản lý lớp học</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/mon-hoc">Quản lý môn học</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/thong-ke">Thống kê</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-10">
+            <div>
+                <form action="/sinh-vien" method="get">
+                    <div class="row">
+                        <div class="col-8"><input name="name" th:value="${name}" placeholder="Tên sinh viên" class="form-control"/></div>
+                        <div class="col-4"><input type="submit" class="btn btn-primary" value="Tìm"/></div>
+                    </div>
+                </form>
+                <form action="/sinh-vien/them-danh-sach" method="post" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-8"><input name="file" type="file" class="form-control"/></div>
+                        <div class="col-4"><input type="submit" class="btn btn-primary" value="Thêm"/></div>
+                    </div>
+                </form>
+                <a href="/sinh-vien/xuat-danh-sach" class="btn btn-warning">Xuất danh sách</a>
+            </div>
+            <a href="/sinh-vien/them" class="btn btn-success">Tạo mới</a>
+            <table class="table">
+                <tr>
+                    <th width="10%">MSSV</th>
+                    <th width="30%">Tên sinh viên</th>
+                    <th width="20%">Ngày sinh</th>
+                    <th width="20%">Lớp</th>
+                    <th width="5%">Khóa</th>
+                    <th width="10%">Email</th>
+                    <th width="5%">Giới tính</th>
+                </tr>
+                <tr th:each="student : ${students}">
+                    <td th:text="${student.getId()}"/>
+                    <td th:text="${student.getName()}"/>
+                    <td th:text="${student.getBrith()}"/>
+                    <td th:text="${student.getGrade().getName()}"/>
+                    <td th:text="${student.getYear()}"/>
+                    <td th:text="${student.getEmail()}"/>
+                    <td th:text="${student.getGenderText()}"/>
+                    <td>
+                        <a th:href="@{/sinh-vien/sua?id={id}(id=${student.getId()})}" class="btn btn-primary">Sửa</a>
+                    </td>
+                    <td>
+                        <a th:href="@{/sinh-vien/xoa?id={id}(id=${student.getId()})}" class="btn btn-danger">Xóa</a>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</main>
+<footer>
+
+</footer>
+</nav>
+</body>
+</html>
