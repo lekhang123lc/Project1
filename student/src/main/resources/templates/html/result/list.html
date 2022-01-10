@@ -1,81 +1,176 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Quản lý kết quả học tập</title>
+    <title>Quản lý sinh viên</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<!--    <link rel="stylesheet" href="../../css/bootstrap.min.css">-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css">
 </head>
 <body>
-    <header class="container">
-        <h1 th:text="${'Kết quả học tập môn '+subject.getName()}"></h1>
-    </header>
-    <main class="container">
-        <div class="row">
-            <div class="col-2">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/sinh-vien">Quản lý sinh viên</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/khoa-vien">Quản lý khoa viện</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/lop">Quản lý lớp học</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/mon-hoc">Quản lý môn học</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/thong-ke">Thống kê</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-10">
-                <form action="/ket-qua/them-danh-sach" method="post" enctype="multipart/form-data">
-                    <input type="hidden" name="subject_id" th:value="${subject.getId()}">
-                    <div class="row">
-                        <div class="col-8"><input name="file" type="file" class="form-control"/></div>
-                        <div class="col-4"><input type="submit" class="btn btn-primary" value="Thêm"/></div>
-                    </div>
-                </form>
-                <a th:href="${'/ket-qua/xuat-danh-sach?subject_id='+subject.getId()}" class="btn btn-warning">Xuất danh sách</a>
+
+<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="/" class="nav-link">Trang chủ</a>
+      </li>
+    </ul>
+
+  </nav>
+  <!-- /.navbar -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="/" class="brand-link">
+      <img src="https://storage.googleapis.com/hust-files/5807675312963584/images/hust-logo-official_.3m.jpeg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">Quản lý sinh viên</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false" style="height: 1000px;">
+            <li class="nav-item">
+                <a href="/sinh-vien" class="nav-link">
+                    <i class="nav-icon fas fa-users"></i>
+                    <p>Quản lý sinh viên</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/khoa-vien" class="nav-link">
+                    <i class="nav-icon fas fa-university"></i>
+                    <p>Quản lý khoa viện</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/lop" class="nav-link">
+                    <i class="nav-icon fas fa-th"></i>
+                    <p>Quản lý lớp học</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/mon-hoc" class="nav-link">
+                    <i class="nav-icon fas fa-book"></i>
+                    <p>Quản lý môn học</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/thong-ke" class="nav-link">
+                    <i class="nav-icon fas fa-chart-bar"></i>
+                    <p>Thống kê</p>
+                </a>
+            </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+      
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Kết quả học tập</h1>
+          </div>
+          <div class="col-sm-5">
+            <div class="float-right">
                 <a th:href="@{/ket-qua/them?subject_id={id}(id=${subject.getId()})}" class="btn btn-success">Tạo mới</a>
-                <table class="table">
-                    <tr>
+            </div>
+          </div>
+          <div class="col-sm-1"></div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <form class="form-horizontal" action="/ket-qua/them-danh-sach" method="post" enctype="multipart/form-data">
+                  <input type="hidden" name="subject_id" th:value="${subject.getId()}">
+                  <div class="card card-primary">
+                    <div class="card-body">
+                        <div class="form-group row">
+                          <label for="exampleInputFile" class="col-2 col-form-label">Thêm danh sách</label>
+                          <div class="input-group col-7">
+                            <div class="custom-file">
+                              <input type="file" name="file" class="custom-file-input" id="exampleInputFile">
+                              <label class="custom-file-label" for="exampleInputFile">Chọn file</label>
+                            </div>
+                            <div class="input-group-append">
+                              <button class="input-group-text" type="submit">Upload</button>
+                            </div>
+                          </div>
+                          <div class="col-1"></div>
+                          <div class="col-2">
+                            <div class="">
+                              <a th:href="${'/ket-qua/xuat-danh-sach?subject_id='+subject.getId()}" class="btn btn-info">Xuất danh sách</a>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </form>
+              
+              <div class="card">
+                <div class="card-header">
+                    <h3 th:text="${'Kết quả học tập môn '+subject.getName()}" class="card-title"></h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body table-responsive p-0">
+                  <table class="table table-hover text-nowrap">
+                    <thead>
+                      <tr>
                         <th width="10%">MSSV</th>
-                        <th width="30%">Tên sinh viên</th>
+                        <th width="10%">Tên sinh viên</th>
                         <th width="10%">Điểm quá trình</th>
                         <th width="10%">Trọng số quá trình</th>
                         <th width="10%">Điểm cuối kỳ</th>
                         <th width="10%">Điểm tổng kết</th>
-                        <th width="10%">Học kỳ</th>
                         <th width="10%">Điểm chữ</th>
-                    </tr>
-                    <tr th:each="result : ${results}">
-                        <td th:text="${result.getStudent().getId()}"/>
-                        <td><a th:text="${result.getStudent().getName()}" th:href="@{/sinh-vien/sua?id={id}(id=${result.getStudent().getId()})}"></a></td>
-                        <td th:text="${result.getProcess_result()}"/>
-                        <td th:text="${result.getSubject().getProcess_weight()}"/>
-                        <td th:text="${result.getFinal_result()}"/>
-                        <td th:text="${result.getSummary()}"/>
-                        <td th:text="${result.getSemester()}"/>
-                        <td th:text="${result.getType()}"/>
-                        <td>
-                            <a th:href="@{/ket-qua/sua(subject_id=${subject.getId()}, id=${result.getId()})}" class="btn btn-primary">Sửa</a>
-                        </td>
-                        <td>
-                            <a th:href="@{/ket-qua/xoa(subject_id=${subject.getId()}, id=${result.getId()})}" class="btn btn-danger">Xóa</a>
-                        </td>
-                    </tr>
-                </table>
-
+                        <th width="10%">Học kỳ</th>
+                        <th width="10%">Hành động</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="result : ${results}">
+                            <td th:text="${result.getStudent().getId()}"/>
+                            <td><a th:text="${result.getStudent().getName()}" th:href="@{/sinh-vien/sua?id={id}(id=${result.getStudent().getId()})}"></a></td>
+                            <td th:text="${result.getProcess_result()}"/>
+                            <td th:text="${result.getSubject().getProcess_weight()}"/>
+                            <td th:text="${result.getFinal_result()}"/>
+                            <td th:text="${result.getSummary()}"/>
+                            <td th:text="${result.getType()}"/>
+                            <td th:text="${result.getSemester()}"/>
+                            <td>
+                                <a th:href="@{/ket-qua/sua(subject_id=${subject.getId()}, id=${result.getId()})}" class="btn btn-primary">Sửa</a>
+                            </td>
+                            <td>
+                                <a th:href="@{/ket-qua/xoa(subject_id=${subject.getId()}, id=${result.getId()})}" class="btn btn-danger">Xóa</a>
+                            </td>
+                        </tr> 
+                    </tbody>
+                  </table>
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
             </div>
-        </div>
-    </main>
-    <footer>
+          </div>
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
 
-    </footer>
-</nav>
 </body>
 </html>

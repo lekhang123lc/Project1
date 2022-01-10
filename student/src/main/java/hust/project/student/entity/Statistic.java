@@ -1,10 +1,7 @@
 package hust.project.student.entity;
 
 import javax.persistence.*;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Statistic {
     private long semester;
@@ -23,10 +20,26 @@ public class Statistic {
         type.put("D", 0);
         type.put("F", 0);
     }
+
+    public List<Integer> getListType(){
+        List<Integer> l = new ArrayList<Integer>();
+        l.add(type.get("F"));
+        l.add(type.get("D"));
+        l.add(type.get("D+"));
+        l.add(type.get("C"));
+        l.add(type.get("C+"));
+        l.add(type.get("B"));
+        l.add(type.get("B+"));
+        l.add(type.get("A"));
+        l.add(type.get("A+"));
+
+        return l;
+    }
     
     public void addResult(List<Result> rs){
         for(Result r: rs){
             int x = type.get(r.getType());
+            System.out.print(r.getType());
             type.put(r.getType(), x+1);
         }
     }
