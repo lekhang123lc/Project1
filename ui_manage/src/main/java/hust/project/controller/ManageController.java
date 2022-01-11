@@ -30,7 +30,7 @@ public class ManageController {
         model.addAttribute("week", week);
         model.addAttribute("id", id);
         model.addAttribute("input", input);
-        model.addAttribute("output", output);
+        model.addAttribute("output", "Lê Tuấn Khang 2018018\n"+output);
         return "index";
     }
 
